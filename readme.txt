@@ -33,4 +33,4 @@ None so far.
 == Changelog ==
 
 = 1.0 =
-Initial version.
+* Initial version.
