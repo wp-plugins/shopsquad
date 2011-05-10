@@ -11,7 +11,7 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 == Description ==
 
 This plugin displays:
-* Your ShopSquad username linking to your ShopSquad profile page
+* Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile page
 * Your rank in your best category and your star rating
 * Whether you're currently available to give advice
 * Your categories of expertise
@@ -20,7 +20,7 @@ This plugin displays:
 
 1. Unzip `shopsquad.zip` and place the 'shopsquad' folder in the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Click on 'Widgets' under the 'Appearance' tab, place the plugin in a desired location, and enter in your ShopSquad username.
+1. Click on 'Widgets' under the 'Appearance' tab, place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
 
 == Frequently Asked Questions ==
 
