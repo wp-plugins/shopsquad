@@ -10,7 +10,7 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 
 == Description ==
 
-This plugin displays:
+= This plugin displays: =
 
 
 * Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile page
@@ -25,7 +25,7 @@ This plugin displays:
 
 **Important Note: If you had previously installed this plugin but got an "invalid header" error message, please update the plugin through the Admin panel. Or, delete the 'shopsquad' folder in the '/wp-content/plugins/' directory and follow the below steps again.**
 
-*The easy way:*
+= The easy way =
 
 
 * In your WordPress admin panel, open the 'Plugins' tab and click 'Add New'
@@ -34,7 +34,8 @@ This plugin displays:
 
 * In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
 
-*The hard way:*
+
+= The hard way =
 
 
 * Unzip `shopsquad.zip` and place the 'shopsquad' folder in the `/wp-content/plugins/` directory
