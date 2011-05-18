@@ -21,14 +21,14 @@ This plugin displays:
 **Important Note: If you had previously installed this plugin but got an "invalid header" error message, please delete the 'shopsquad' folder in the '/wp-content/plugins/' directory and try again.**
 
 The easy way:
-* Go to your WordPress Admin panel
-* Open the 'Plugins' tab and click 'Add New'
-* Search for 'shopsquad' and click 'Install'
+* In your WordPress admin panel, open the 'Plugins' tab and click 'Add New'
+* Search for 'shopsquad' and click 'Install' and then 'Activate Plugin'
+* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
 
 The hard way:
 * Unzip `shopsquad.zip` and place the 'shopsquad' folder in the `/wp-content/plugins/` directory
 * Activate the plugin through the 'Plugins' menu in WordPress
-* Click on 'Widgets' under the 'Appearance' tab, place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
+* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
 
 == Frequently Asked Questions ==
 
@@ -39,6 +39,9 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+
+= 1.1 =
+* Fixed bug in which some important files weren't being uploaded to the server.
 
 = 1.0 =
 * Initial version.
