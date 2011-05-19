@@ -2,7 +2,7 @@
 /*
 Plugin Name: ShopSquad Advisor Plugin
 Plugin URI: http://www.shopsquad.com/
-Version: v1.1
+Version: v1.2
 Author: ShopSquad
 Description: A plugin for <a href="http://www.shopsquad.com" target="_blank">ShopSquad</a> advisors
 */

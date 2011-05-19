@@ -54,6 +54,9 @@ None so far.
 
 == Changelog ==
 
+= 1.2 =
+* Fixed bug in which the rating star image files weren't loaded on some blogs.
+
 = 1.1 =
 * Fixed bug in which some important files weren't being uploaded to the server.
 
