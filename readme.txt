@@ -23,7 +23,6 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 
 == Installation ==
 
-**Important Note: If you had previously installed this plugin but got an "invalid header" error message, please update the plugin through the Admin panel. Or, delete the 'shopsquad' folder in the '/wp-content/plugins/' directory and follow the below steps again.**
 
 = The easy way =
 
