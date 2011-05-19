@@ -140,10 +140,11 @@ class ShopSquad_Widget extends WP_Widget {
 
 	# Returns the HTML for the rating image, given a rating from 0 to 5
 	static function image_star_tag ($score) {
+	    $plugin_directory = WP_PLUGIN_URL . '/' . str_replace(basename( __FILE__), "", plugin_basename(__FILE__));
     	$tag = '';
 	    # if no score, return 'no rating'
 	    if ( (! $score) || $score == 0 ) {
-	      $tag = "<img alt='No_rating' src='{$WP_PLUGIN_URL}/star_no_rating.png' />";
+	      $tag = "<img alt='No_rating' src='{$plugin_directory}star_no_rating.png' />";
 	      return $tag;
 	    }
 
@@ -154,7 +155,7 @@ class ShopSquad_Widget extends WP_Widget {
 	    $last_star = $score - $num_full_stars;  # the score is rounded to the nearest half-star
 	    if ($last_star >= 0.75) {
 	      $num_full_stars = $num_full_stars + 1;
-		}
+		  }
 	    else if ($last_star >= 0.25) {
 	      $half_star = 1;
 	    }
@@ -163,13 +164,13 @@ class ShopSquad_Widget extends WP_Widget {
 
 	    # print full stars, then half star, then empty stars
 	    for ($i = 0; $i < $num_full_stars; $i++) {
-	      $tag .= "<img alt='Full_star' src='{$WP_PLUGIN_URL}/star_full.png' height='10px' width='10px' />";
+	      $tag .= "<img alt='Full_star' src='{$plugin_directory}star_full.png' height='10px' width='10px' />";
 	    }
 	    if ($half_star == 1) {
-	      $tag .= "<img alt='Half_star' src='{$WP_PLUGIN_URL}/star_half.png' height='10px' width='10px' />";
+	      $tag .= "<img alt='Half_star' src='{$plugin_directory}star_half.png' height='10px' width='10px' />";
 	    }
 	    for ($i = 0; $i < $num_empty_stars; $i++) {
-	      $tag .= "<img alt='Empty_star' src='{$WP_PLUGIN_URL}/star_empty.png' height='10px' width='10px' />";
+	      $tag .= "<img alt='Empty_star' src='{$plugin_directory}star_empty.png' height='10px' width='10px' />";
 		}
 		return $tag;
 	}
