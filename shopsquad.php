@@ -143,7 +143,7 @@ class ShopSquad_Widget extends WP_Widget {
     	$tag = '';
 	    # if no score, return 'no rating'
 	    if ( (! $score) || $score == 0 ) {
-	      $tag = "<img alt='No_rating' src='wp-content/plugins/shopsquad/star_no_rating.png' />";
+	      $tag = "<img alt='No_rating' src='$WP_PLUGIN_URL/star_no_rating.png' />";
 	      return $tag;
 	    }
 
@@ -163,13 +163,13 @@ class ShopSquad_Widget extends WP_Widget {
 
 	    # print full stars, then half star, then empty stars
 	    for ($i = 0; $i < $num_full_stars; $i++) {
-	      $tag .= "<img alt='Full_star' src='wp-content/plugins/shopsquad/star_full.png' height='10px' width='10px' />";
+	      $tag .= "<img alt='Full_star' src='$WP_PLUGIN_URL/star_full.png' height='10px' width='10px' />";
 	    }
 	    if ($half_star == 1) {
-	      $tag .= "<img alt='Half_star' src='wp-content/plugins/shopsquad/star_half.png' height='10px' width='10px' />";
+	      $tag .= "<img alt='Half_star' src='$WP_PLUGIN_URL/star_half.png' height='10px' width='10px' />";
 	    }
 	    for ($i = 0; $i < $num_empty_stars; $i++) {
-	      $tag .= "<img alt='Empty_star' src='wp-content/plugins/shopsquad/star_empty.png' height='10px' width='10px' />";
+	      $tag .= "<img alt='Empty_star' src='$WP_PLUGIN_URL/star_empty.png' height='10px' width='10px' />";
 		}
 		return $tag;
 	}
