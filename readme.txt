@@ -3,7 +3,7 @@ Contributors: oamasood
 Donate link: http://www.shopsquad.com/
 Tags: shopsquad, shopping, advice, experts, products
 Requires at least: 2.0.2
-Tested up to: 3.1.2
+Tested up to: 3.1.3
 Stable tag: trunk
 
 Let your readers know that you're available to give shopping advice on ShopSquad (www.shopsquad.com).
@@ -31,7 +31,7 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 
 * Search for 'shopsquad' and click 'Install' and then 'Activate Plugin'
 
-* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
+* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username and areas of advice.
 
 
 = The hard way =
@@ -41,7 +41,7 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 
 * Activate the plugin through the 'Plugins' menu in WordPress
 
-* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
+* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username and areas of advice.
 
 == Frequently Asked Questions ==
 
@@ -52,6 +52,9 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+
+= 1.3 =
+* Changed plugin wording a bit. Made some UI changes to look a little better. Also, added new options to set 'advice' list and to configure width and height. 
 
 = 1.2 =
 * Fixed bug in which the rating star image files weren't loaded on some blogs.
