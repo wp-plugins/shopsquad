@@ -34,7 +34,7 @@ class ShopSquad_Widget extends WP_Widget {
 		$height = $instance['height'];
 		if ( empty($height) ) $height = "217";
 		$height = $height . "px";
-		echo "<style>.widget_shopsquad{border: 1px solid #CECECE;background-color: transparent;height: {$height};width: {$width};text-align: left; padding: 0px 5px;}</style>";
+		echo "<style>.widget_shopsquad{border: 1px solid #CECECE;background-color: transparent;width: auto;text-align: left; padding: 5px;}</style>";
 		# removed background: background: #9FC9E3;
 		echo "{$before_widget}{$before_title}<a href='" . esc_url( "http://www.shopsquad.com/" ) . "' style='display: block;padding: 5px 0 0;text-align: center;margin-bottom: 5px;' target='_blank'><img src='http://www.shopsquad.com/images/logo_small.png' style='max-height: 30px;'/></a>{$after_title}"; 
 
