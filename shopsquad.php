@@ -26,15 +26,21 @@ class ShopSquad_Widget extends WP_Widget {
 
 		$username = trim( urlencode( $instance['username'] ) );
 		if ( empty($username) ) return;
-    
-		# Display title, which links to ShopSquad homepage
+
+    # Set width and height based on input parameters or lack thereof
 		$width = $instance['width'];
-		if ( empty($width) ) $width = "217";
-		$width = $width . "px";
+		if ( empty($width) ){
+		  $width = "auto";
+		} else {
+		  $width = $width . "px";
+	  }
 		$height = $instance['height'];
-		if ( empty($height) ) $height = "217";
-		$height = $height . "px";
-		echo "<style>.widget_shopsquad{border: 1px solid #CECECE;background-color: transparent;width: auto;text-align: left; padding: 5px;}</style>";
+		$height_css = "";
+		if (! empty($height) ){ 
+		  $height_css = "height: " . $height . "px;";
+	  }
+		# Display title, which links to ShopSquad homepage
+		echo "<style>.widget_shopsquad{border: 1px solid #CECECE;background-color: transparent;{$height_css} width: {$width};text-align: left; padding: 5px;}</style>";
 		# removed background: background: #9FC9E3;
 		echo "{$before_widget}{$before_title}<a href='" . esc_url( "http://www.shopsquad.com/" ) . "' style='display: block;padding: 5px 0 0;text-align: center;margin-bottom: 5px;' target='_blank'><img src='http://www.shopsquad.com/images/logo_small.png' style='max-height: 30px;'/></a>{$after_title}"; 
 
@@ -95,7 +101,7 @@ class ShopSquad_Widget extends WP_Widget {
 #			$categories = $stats['category_names'];
       $advice = trim($instance['advice']);
 			if (!empty($advice)) {
-				echo "I can offer advice on: {$advice}";
+				echo "I can offer advice on {$advice}";
 #				foreach ($categories as $category)
 #				{
 					# Print "and" before the last category (e.g. "and computers") unless there's only one category
@@ -137,7 +143,7 @@ class ShopSquad_Widget extends WP_Widget {
 
 	function form( $instance ) {
 		//Defaults
-		$instance = wp_parse_args( (array) $instance, array('username' => '', 'width' => '217', 'height' => '217', 'advice' => '') );
+		$instance = wp_parse_args( (array) $instance, array('username' => '', 'width' => '', 'height' => '', 'advice' => '') );
 
 		$username = esc_attr($instance['username']);
 		$width = esc_attr($instance['width']);
@@ -148,13 +154,13 @@ class ShopSquad_Widget extends WP_Widget {
 		echo '  <label for="' . $this->get_field_id('username') . '">' . esc_html__('ShopSquad username:');
 		echo '    <input class="widefat" id="' . $this->get_field_id('username') . '" name="' . $this->get_field_name('username') . '" type="text" value="' . $username . '" />';
 		echo '  </label>';
-		echo '  <label for="' . $this->get_field_id('advice') . '">' . esc_html__('I can offer advice on:');
+		echo '  <label for="' . $this->get_field_id('advice') . '">' . esc_html__('I can offer advice on');
 		echo '    <input class="widefat" id="' . $this->get_field_id('advice') . '" name="' . $this->get_field_name('advice') . '" type="text" value="' . $advice . '" />';
 		echo '  </label>';
-		echo '  <label for="' . $this->get_field_id('width') . '">' . esc_html__('Widget width (pixels):');
+		echo '  <label for="' . $this->get_field_id('width') . '">' . esc_html__('Width (pixels) - leave blank for auto:');
 		echo '    <input class="widefat" id="' . $this->get_field_id('width') . '" name="' . $this->get_field_name('width') . '" type="text" value="' . $width . '" />';
 		echo '  </label>';
-		echo '  <label for="' . $this->get_field_id('height') . '">' . esc_html__('Widget height (pixels):');
+		echo '  <label for="' . $this->get_field_id('height') . '">' . esc_html__('Height (pixels) - leave blank for auto:');
 		echo '    <input class="widefat" id="' . $this->get_field_id('height') . '" name="' . $this->get_field_name('height') . '" type="text" value="' . $height . '" />';
 		echo '  </label>';
 		echo '</p>';
