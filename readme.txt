@@ -52,6 +52,8 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+= 1.4 =
+* More improvements with the width and height settings.
 
 = 1.3 =
 * Changed plugin wording a bit. Made some UI changes to look a little better. Also, added new options to set 'advice' list and to configure width and height. 
