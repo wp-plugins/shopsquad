@@ -52,6 +52,9 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+= 1.5 =
+* Removed 'No Stars Rating' image if user doesn't have any ratings.
+
 = 1.4 =
 * More improvements with the width and height settings.
 

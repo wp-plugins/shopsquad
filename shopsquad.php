@@ -2,7 +2,7 @@
 /*
 Plugin Name: ShopSquad Advisor Plugin
 Plugin URI: http://www.shopsquad.com/
-Version: v1.4
+Version: v1.5
 Author: ShopSquad
 Description: A plugin for <a href="http://www.shopsquad.com" target="_blank">ShopSquad</a> advisors
 */
@@ -86,12 +86,13 @@ class ShopSquad_Widget extends WP_Widget {
 			#	     <font size='4' color='blue'> <a href='http://www.shopsquad.com/advisors/rankings/0/overall-rank#{$username}' target='_blank'> #{$rank} </a></font><br />";
 			#}
 
-			# Display star rating
-			echo "<a href='http://www.shopsquad.com/{$username}/ratings' target='_blank'>";
-			echo ShopSquad_Widget::image_star_tag($stats['rating']);
-			echo "</a>";
-			echo "<br />";
-			
+			# Display star rating, if any
+      if (! empty($stats['rating'])) {
+			  echo "<a href='http://www.shopsquad.com/{$username}/ratings' target='_blank'>";
+			  echo ShopSquad_Widget::image_star_tag($stats['rating']);
+			  echo "</a>";
+			  echo "<br />";
+			}
 			# Display online/offline status
 			#$currently_online = $stats['currently_online'];
 			echo "Request shopping advice <a href='http://www.shopsquad.com/{$username}' target='_blank'>here</a>.<br />If I'm not online you can <a href='http://www.shopsquad.com/{$username}' target='_blank'>leave me a question</a>. ";
