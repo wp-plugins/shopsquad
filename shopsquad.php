@@ -87,7 +87,7 @@ class ShopSquad_Widget extends WP_Widget {
 			#}
 
 			# Display star rating, if any
-      if (! empty($stats['rating'])) {
+      if ($stats['rating'] && $stats['rating'] != 0) {
 			  echo "<a href='http://www.shopsquad.com/{$username}/ratings' target='_blank'>";
 			  echo ShopSquad_Widget::image_star_tag($stats['rating']);
 			  echo "</a>";
