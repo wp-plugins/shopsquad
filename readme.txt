@@ -15,9 +15,7 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 
 * Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile page
 
-* Your rank in your best category and your star rating
-
-* Whether you're currently available to give advice
+* Your star rating
 
 * Your categories of expertise
 
@@ -52,6 +50,7 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+
 = 1.5 =
 * Removed 'No Stars Rating' image if user doesn't have any ratings.
 
