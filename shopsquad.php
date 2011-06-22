@@ -86,23 +86,16 @@ class ShopSquad_Widget extends WP_Widget {
 			#	     <font size='4' color='blue'> <a href='http://www.shopsquad.com/advisors/rankings/0/overall-rank#{$username}' target='_blank'> #{$rank} </a></font><br />";
 			#}
 
-			# Display star rating, if any
-      if ($stats['rating'] && $stats['rating'] != 0) {
-			  echo "<a href='http://www.shopsquad.com/{$username}/ratings' target='_blank'>";
-			  echo ShopSquad_Widget::image_star_tag($stats['rating']);
-			  echo "</a>";
-			  echo "<br />";
-			}
 			# Display online/offline status
 			#$currently_online = $stats['currently_online'];
-			echo "Request shopping advice <a href='http://www.shopsquad.com/{$username}' target='_blank'>here</a>.<br />If I'm not online you can <a href='http://www.shopsquad.com/{$username}' target='_blank'>leave me a question</a>. ";
+			echo "<p>Request shopping advice <a href='http://www.shopsquad.com/{$username}' target='_blank'>here</a>.<br />If I'm not online you can <a href='http://www.shopsquad.com/{$username}' target='_blank'>leave me a question</a>.</p>";
       
       
 			# Display seller categories/products
 #			$categories = $stats['category_names'];
-      $advice = trim($instance['advice']);
+			$advice = trim($instance['advice']);
 			if (!empty($advice)) {
-				echo "I can offer advice on {$advice}";
+				echo "<p>I can offer advice on {$advice}</p>";
 #				foreach ($categories as $category)
 #				{
 					# Print "and" before the last category (e.g. "and computers") unless there's only one category
@@ -125,7 +118,7 @@ class ShopSquad_Widget extends WP_Widget {
 			  echo '<p>' . esc_html__('Error: ShopSquad did not respond. Please wait a few minutes and refresh this page.') . '</p>';
 		}
 		
-		echo "<br><br><a href='http://www.shopsquad.com/invited_by/{$username}' target='_blank'>Join me</a> on ShopSquad";
+		echo "<p><a href='http://www.shopsquad.com/invited_by/{$username}' target='_blank'>Join me</a> on ShopSquad</p>";
 
 		echo $after_widget;
 	}
