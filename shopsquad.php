@@ -124,6 +124,8 @@ class ShopSquad_Widget extends WP_Widget {
 			else
 			  echo '<p>' . esc_html__('Error: ShopSquad did not respond. Please wait a few minutes and refresh this page.') . '</p>';
 		}
+		
+		echo "<br><br><a href='http://www.shopsquad.com/invited_by/{$username}' target='_blank'>Join me</a> on ShopSquad";
 
 		echo $after_widget;
 	}
