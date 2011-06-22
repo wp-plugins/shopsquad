@@ -40,9 +40,9 @@ class ShopSquad_Widget extends WP_Widget {
 		  $height_css = "height: " . $height . "px;";
 	  }
 		# Display title, which links to ShopSquad homepage
-		echo "<style>.widget_shopsquad{border: 1px solid #000;background-color: transparent;{$height_css} width: {$width};text-align: left; padding: 8px;}</style>";
+		echo "<style>.widget_shopsquad{border: 1px solid #000;background-color: transparent;{$height_css} width: {$width};text-align: left; padding: 5px; font-size:90%}</style>";
 		# removed background: background: #9FC9E3;
-		echo "{$before_widget}{$before_title}<a href='" . esc_url( "http://www.shopsquad.com/" ) . "' style='display: block;padding: 5px 0 0;text-align: center;margin-bottom: 5px;' target='_blank'><img src='http://www.shopsquad.com/images/logo_small.png' style='max-height: 30px;'/></a>{$after_title}"; 
+		echo "{$before_widget}{$before_title}<a href='" . esc_url( "http://www.shopsquad.com/" ) . "' style='display: block;padding: 5px 0 0;text-align: center;margin-bottom: 5px;' target='_blank'><img src='http://www.shopsquad.com/images/logo_small.png' style='max-width:95px;'/></a>{$after_title}"; 
 
 		if ( !$stats = wp_cache_get( 'widget-shopsquad-' . $this->number , 'widget' ) ) {
 
@@ -88,7 +88,7 @@ class ShopSquad_Widget extends WP_Widget {
 
 			# Display online/offline status
 			#$currently_online = $stats['currently_online'];
-			echo "<p>Request shopping advice <a href='http://www.shopsquad.com/{$username}' target='_blank'>here</a>.<br />If I'm not online you can <a href='http://www.shopsquad.com/{$username}' target='_blank'>leave me a question</a>.</p>";
+			echo "<p>Request shopping advice <a href='http://www.shopsquad.com/{$username}' target='_blank'>here</a>. If I'm not online you can <a href='http://www.shopsquad.com/{$username}' target='_blank'>leave me a question</a>.</p>";
       
       
 			# Display seller categories/products
