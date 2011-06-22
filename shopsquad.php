@@ -40,7 +40,7 @@ class ShopSquad_Widget extends WP_Widget {
 		  $height_css = "height: " . $height . "px;";
 	  }
 		# Display title, which links to ShopSquad homepage
-		echo "<style>.widget_shopsquad{border: 1px solid #CECECE;background-color: transparent;{$height_css} width: {$width};text-align: left; padding: 5px;}</style>";
+		echo "<style>.widget_shopsquad{border: 1px solid #000;background-color: transparent;{$height_css} width: {$width};text-align: left; padding: 8px;}</style>";
 		# removed background: background: #9FC9E3;
 		echo "{$before_widget}{$before_title}<a href='" . esc_url( "http://www.shopsquad.com/" ) . "' style='display: block;padding: 5px 0 0;text-align: center;margin-bottom: 5px;' target='_blank'><img src='http://www.shopsquad.com/images/logo_small.png' style='max-height: 30px;'/></a>{$after_title}"; 
 
@@ -73,7 +73,7 @@ class ShopSquad_Widget extends WP_Widget {
 		if ( 'error' != $stats ) 
 		{
 			# Display seller rank
-			echo "<a href='http://www.shopsquad.com/{$username}' target='_blank'>{$username}</a> is a top advisor on ShopSquad!<br />";
+			echo "<p><a href='http://www.shopsquad.com/{$username}' target='_blank'>{$username}</a> is a top advisor on ShopSquad!</p>";
 			#$rank = $stats['rank'];
 			#$rank_category = $stats['rank_category'];
 			#$rank_category_id = $stats['rank_category_id'];
