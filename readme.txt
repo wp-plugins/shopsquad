@@ -13,31 +13,21 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 = This plugin displays: =
 
 
-* Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile page
+* Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username and picture linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile
 
-* Your star rating
+* A link to get advice from you
 
-* Your categories of expertise
+* A link to join ShopSquad with you as the referrer. (You get $5 for every person who joins and recommends $50.)
 
 == Installation ==
 
 
-= The easy way =
+= Simple - Just use the WordPress Admin panel =
 
 
 * In your WordPress admin panel, open the 'Plugins' tab and click 'Add New'
 
 * Search for 'shopsquad' and click 'Install' and then 'Activate Plugin'
-
-* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username and areas of advice.
-
-
-= The hard way =
-
-
-* Unzip `shopsquad.zip` and place the 'shopsquad' folder in the `/wp-content/plugins/` directory
-
-* Activate the plugin through the 'Plugins' menu in WordPress
 
 * In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username and areas of advice.
 
@@ -50,6 +40,9 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+
+= 2.0 =
+* Complete plugin redesign. Now shows thumbnail, link to profile page, and invitation to join.
 
 = 1.5 =
 * Removed 'No Stars Rating' image if user doesn't have any ratings.
