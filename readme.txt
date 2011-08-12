@@ -40,6 +40,8 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+= 2.2 =
+* Added option to change background color. Default is ShopSquad blue (will make footer text white to look better).
 
 = 2.1 =
 * Fixed styling issues when plugin width is 220px or less. (Images auto-resize.)

@@ -2,7 +2,7 @@
 /*
 Plugin Name: ShopSquad Advisor Plugin
 Plugin URI: http://www.shopsquad.com/
-Version: v2.1
+Version: v2.2
 Author: ShopSquad
 Description: A plugin for <a href="http://www.shopsquad.com" target="_blank">ShopSquad</a> advisors
 */
@@ -32,6 +32,11 @@ class ShopSquad_Widget extends WP_Widget {
 		extract( $args );
 
 		$username = trim( urlencode( $instance['username'] ) );
+		# Set default ShopSquad background color if it's blank
+		$background_color = trim( urlencode( $instance['background_color'] ) );
+		if ( empty($background_color) ) {
+		  $background_color = "#1167BC";
+		}
 		if ( empty($username) ) return;
 
 		if ( !$stats = wp_cache_get( 'widget-shopsquad-' . $this->number , 'widget' ) ) {
@@ -59,7 +64,7 @@ class ShopSquad_Widget extends WP_Widget {
 		
 		if ( 'error' != $stats ) 
 		{
-      Shopsquad_Widget::print_widget($before_widget, $before_title, $username, $stats['thumbnail_url'], $after_title, $after_widget);
+      Shopsquad_Widget::print_widget($before_widget, $before_title, $background_color, $username, $stats['thumbnail_url'], $after_title, $after_widget);
     }
 	}
 
@@ -67,6 +72,7 @@ class ShopSquad_Widget extends WP_Widget {
 		$instance = $old_instance;
 
 		$instance['username'] = trim( strip_tags( stripslashes( $new_instance['username'] ) ) );
+		$instance['background_color'] = trim( strip_tags( stripslashes( $new_instance['background_color'] ) ) );
 
 		wp_cache_delete( 'widget-shopsquad-' . $this->number , 'widget' );
 		wp_cache_delete( 'widget-shopsquad-response-code-' . $this->number, 'widget' );
@@ -76,33 +82,42 @@ class ShopSquad_Widget extends WP_Widget {
 
 	function form( $instance ) {
 		//Defaults
-		$instance = wp_parse_args( (array) $instance, array('username' => '')); 
+		$instance = wp_parse_args( (array) $instance, array('username' => '', 'background_color' => '#1167BC')); 
 
 		$username = esc_attr($instance['username']);
-
+		$background_color = esc_attr($instance['background_color']);
+    # Don't show background color in form if it's the default
+    if ($background_color == '#1167BC') {
+      $background_color = "";
+    }
 		echo '<p>';
 		echo '  <label for="' . $this->get_field_id('username') . '">' . esc_html__('ShopSquad username:');
 		echo '    <input class="widefat" id="' . $this->get_field_id('username') . '" name="' . $this->get_field_name('username') . '" type="text" value="' . $username . '" />';
 		echo '  </label>';
 		echo '</p>';
+		echo '<p>';
+		echo '  <label for="' . $this->get_field_id('background_color') . '">' . esc_html__('Enter background color (e.g. blue, red, black). Leave blank for default or enter transparent to make the background transparent:');
+		echo '    <input class="widefat" id="' . $this->get_field_id('background_color') . '" name="' . $this->get_field_name('background_color') . '" type="text" value="' . $background_color . '" />';
+		echo '  </label>';
+		echo '</p>';
+		echo '<p>For a list of all background colors, <a href="http://www.w3schools.com/html/html_colornames.asp" target="_blank">click here</a>.</p>';
 	}
 
-	public static function print_widget($before_widget, $before_title, $username, $thumbnail_url, $after_title, $after_widget) {
+	public static function print_widget($before_widget, $before_title, $background_color, $username, $thumbnail_url, $after_title, $after_widget) {
             print <<<END
 $before_widget 
 
 <style>
 #shopsquad_widget {
-  border:1px solid #000; 
-  background-color:transparent;
+  border:2px solid #777; 
   text-align:center; 
   font-family: 'Lato', arial, sans-serif;
   -moz-border-radius: 15px;
   border-radius: 15px;
-  height:262px;
+/*  height:262px; */
   line-height:1.2;
 }
-#shopsquad_widget .header {height:65px; padding:10px}
+#shopsquad_widget .header {height:58px; padding:10px}
 #shopsquad_widget .header img {padding:0; margin:0; border:none; max-width:100%;}
 #shopsquad_widget .header .logo {margin:10px 0px;float:right;}
 #shopsquad_widget .header .thumbnail {float:left;}
@@ -114,14 +129,17 @@ $before_widget
   box-shadow: 2px 2px 2px #444;
 }
 #shopsquad_widget .body {
-  height:91px; 
+/*  height:91px;  */
   color:black;
   font-size:15px; 
   background-color:white; 
-  padding-top:5px; 
-  padding-bottom:11px;
-  margin-left:2px;
+  padding-top:15px; 
+  padding-bottom:15px;
+/*  margin-left:2px;
   margin-right:2px;
+*/
+  border-top: 2px solid #777;
+  border-bottom: 2px solid #777;
 }
 #shopsquad_widget .body div {}
 #shopsquad_widget .body div .top_advisor {padding:0;}
@@ -145,14 +163,14 @@ $before_widget
   box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.52);
 }
 #shopsquad_widget .body p {}
-#shopsquad_widget .footer {padding-top:15px}
+#shopsquad_widget .footer {padding-top:10px; padding-bottom:10px;}
 #shopsquad_widget p {-webkit-margin-after:0; -webkit-margin-before:0;} /* Remove line breaks from p tags */
 #shopsquad_widget .footer .shopping_expert {font-size:12px; padding-bottom:3px;} /* Are you a shopping expert? */
-#shopsquad_widget .footer p a {font-size:14px; text-decoration:none; font-weight:bold; text-shadow:1px 1px 20px #fff;} /* Join the Squad */
+#shopsquad_widget .footer p a {font-size:14px; text-decoration:none; font-weight:bold; text-shadow:0px 0px 12px #fff;} /* Join the Squad */
 #shopsquad_widget .clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; font-size:0; line-height:0;}
 
 </style>
-<div id="shopsquad_widget">
+<div id="shopsquad_widget" style="background-color:$background_color;">
   <div class="header">
     <div class="logo">
       <a href='http://www.shopsquad.com/' target='_blank'>
@@ -182,7 +200,7 @@ $before_widget
 </div>
 <script type="text/javascript">
 // Rescale logo and thumbnail based on the actual widget width so they come on the same line
-function resizeShopSquadImages() {
+function ShopSquad_resizeImages() {
   var scaleFactor, widget_element, logo_element, thumbnail_element;
   widget_element = document.getElementById("shopsquad_widget");
   // If the actual plugin width is 220px or more, we should be fine
@@ -190,7 +208,7 @@ function resizeShopSquadImages() {
     logo_element = widget_element.getElementsByClassName('logo')[0].getElementsByTagName('img')[0];
     thumbnail_element = widget_element.getElementsByClassName('thumbnail')[0].getElementsByTagName('img')[0];
     // Get scale factor to rescale images by
-    scaleFactor = (widget_element.offsetWidth - 20) / (logo_element.offsetWidth + thumbnail_element.offsetWidth); // subtract 20px to account for padding
+    scaleFactor = (widget_element.offsetWidth - 24) / (logo_element.offsetWidth + thumbnail_element.offsetWidth); // subtract 20px to account for padding
     // Rescale images
     logo_element.setAttribute('width', scaleFactor * logo_element.getAttribute('width') - 1);
     logo_element.setAttribute('height', scaleFactor * logo_element.getAttribute('height') - 1);
@@ -198,7 +216,15 @@ function resizeShopSquadImages() {
     thumbnail_element.setAttribute('height', scaleFactor * thumbnail_element.getAttribute('height') - 1);
   }
 }
-resizeShopSquadImages();
+ShopSquad_resizeImages();
+function ShopSquad_setWhiteFooterTextIfDefaultBackground() {
+  var widget_element = document.getElementById("shopsquad_widget");
+  if (widget_element.style.backgroundColor.match(/#1167bc/i) || widget_element.style.backgroundColor.match(/rgb.+17.+103.+188/)) {
+    widget_element.getElementsByClassName("footer")[0].getElementsByTagName('p')[0].style.color = "white";
+    widget_element.getElementsByClassName("footer")[0].getElementsByTagName('a')[0].style.color = "white";
+  }
+}
+ShopSquad_setWhiteFooterTextIfDefaultBackground();
 </script>
 
 $after_widget
