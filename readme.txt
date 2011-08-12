@@ -3,7 +3,7 @@ Contributors: oamasood
 Donate link: http://www.shopsquad.com/
 Tags: shopsquad, shopping, advice, experts, products
 Requires at least: 2.0.2
-Tested up to: 3.1.3
+Tested up to: 3.2.1
 Stable tag: trunk
 
 Let your readers know that you're available to give shopping advice on ShopSquad (www.shopsquad.com).
