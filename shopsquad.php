@@ -2,7 +2,7 @@
 /*
 Plugin Name: ShopSquad Advisor Plugin
 Plugin URI: http://www.shopsquad.com/
-Version: v2.0
+Version: v2.1
 Author: ShopSquad
 Description: A plugin for <a href="http://www.shopsquad.com" target="_blank">ShopSquad</a> advisors
 */
@@ -20,7 +20,7 @@ class ShopSquad_Widget extends WP_Widget {
 		$widget_ops = array('classname' => 'shopsquad_widget', 'description' => __( 'Display your ShopSquad stats' ) );
 
     $control_ops = array(
-			'width' => 214,
+			'width' => 220,
 			'height' => 262,
 			'id_base' => 'shopsquad'
 		);
@@ -90,47 +90,47 @@ class ShopSquad_Widget extends WP_Widget {
 	public static function print_widget($before_widget, $before_title, $username, $thumbnail_url, $after_title, $after_widget) {
             print <<<END
 $before_widget 
+
 <style>
-.shopsquad_widget {
+#shopsquad_widget {
   border:1px solid #000; 
   background-color:transparent;
   text-align:center; 
   font-family: 'Lato', arial, sans-serif;
   -moz-border-radius: 15px;
   border-radius: 15px;
-  width:214px;
   height:262px;
   line-height:1.2;
 }
-.shopsquad_widget .header {height:65px; padding:10px}
-.shopsquad_widget .header div:first-child {float:right; margin-top:22px;}
-.shopsquad_widget .header div:last-child {float:left;}
-.shopsquad_widget .header div:last-child img {
+#shopsquad_widget .header {height:65px; padding:10px}
+#shopsquad_widget .header img {padding:0; margin:0; border:none; max-width:100%;}
+#shopsquad_widget .header .logo {margin:10px 0px;float:right;}
+#shopsquad_widget .header .thumbnail {float:left;}
+#shopsquad_widget .header .thumbnail img {
   -moz-border-radius: 15px;
   border-radius: 15px;
-  -moz-box-shadow: 3px 3px 3px #888;
-  -webkit-box-shadow: 3px 3px 3px #888;
-  box-shadow: 3px 3px 3px #888;
+  -moz-box-shadow: 2px 2px 2px #444;
+  -webkit-box-shadow: 2px 2px 2px #444;
+  box-shadow: 2px 2px 2px #444;
 }
-.shopsquad_widget .body {
+#shopsquad_widget .body {
   height:91px; 
   color:black;
   font-size:15px; 
   background-color:white; 
   padding-top:5px; 
-  padding-bottom:15px;
-  padding-right: 33px;
-  padding-left: 30px;
+  padding-bottom:11px;
   margin-left:2px;
   margin-right:2px;
 }
-.shopsquad_widget .body div {padding-top:11px;}
-.shopsquad_widget .body a {
+#shopsquad_widget .body div {}
+#shopsquad_widget .body div .top_advisor {padding:0;}
+#shopsquad_widget .body div .get_advice {padding-top:14px;}
+#shopsquad_widget .body p a {
   padding:5px 9px;
   border-radius:15px; 
   border:1px solid #666;
   color:black;
-  font-family: 'Lato', arial, sans-serif;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.44);
   background: linear-gradient(top, #FFE500 0%,#FF9600 100%);
   background: -moz-linear-gradient(top, #FFE500 0%, #FF9600 100%);
@@ -144,40 +144,62 @@ $before_widget
   -moz-box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.52);
   box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.52);
 }
-.shopsquad_widget .body p {padding-top:6px;}
-.shopsquad_widget .footer {padding-top:9px; font-size:14px;}
-p {-webkit-margin-after:0; -webkit-margin-before:0;} /* Remove line breaks from p tags */
-.shopsquad_widget .footer p:first-of-type {padding-bottom:3px;} /* Are you a shopping expert? */
-.shopsquad_widget .footer p a {text-decoration:none; font-weight:bold; text-shadow:1px 1px 20px #fff;} /* Join the Squad */
-</style>
+#shopsquad_widget .body p {}
+#shopsquad_widget .footer {padding-top:15px}
+#shopsquad_widget p {-webkit-margin-after:0; -webkit-margin-before:0;} /* Remove line breaks from p tags */
+#shopsquad_widget .footer .shopping_expert {font-size:12px; padding-bottom:3px;} /* Are you a shopping expert? */
+#shopsquad_widget .footer p a {font-size:14px; text-decoration:none; font-weight:bold; text-shadow:1px 1px 20px #fff;} /* Join the Squad */
+#shopsquad_widget .clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; font-size:0; line-height:0;}
 
-<div class="shopsquad_widget">
+</style>
+<div id="shopsquad_widget">
   <div class="header">
-    $before_title
-    <div>
+    <div class="logo">
       <a href='http://www.shopsquad.com/' target='_blank'>
         <img src='http://www.shopsquad.com/images/logo_small.png'  width="124" height="25" />
       </a>
     </div>
-    <div>
+    <div class="thumbnail">
       <a href='http://www.shopsquad.com/$username' target='_blank'>
         <img src='$thumbnail_url' width="67" height="67" />
       </a>
     </div>
-    $after_title
   </div>
-  <div class="body">
-    <p>
-      I'm a top Advisor! Ask me your shopping questions:
-    </p>
+  <div class="body clearfix">
     <div>
-      <a href='http://www.shopsquad.com/$username' target='_blank'>Get Advice</a>
+      <p class="top_advisor">
+        I'm a top Advisor! Ask me your shopping questions:
+      </p>
+      <p class="get_advice">
+        <a href='http://www.shopsquad.com/$username' target='_blank'>Get Advice</a>
+      </p>
     </div>
   </div>
   <div class="footer">
-    <p>Are you a shopping expert?</p><p><a href='http://www.shopsquad.com/invited_by/$username' target='_blank'>Join the Squad</a></p>
+    <p class="shopping_expert">Are you a shopping expert?</p>
+    <p><a href='http://www.shopsquad.com/invited_by/$username' target='_blank'>Join the Squad</a></p>
   </div>
 </div>
+<script type="text/javascript">
+// Rescale logo and thumbnail based on the actual widget width so they come on the same line
+function resizeShopSquadImages() {
+  var scaleFactor, widget_element, logo_element, thumbnail_element;
+  widget_element = document.getElementById("shopsquad_widget");
+  // If the actual plugin width is 220px or more, we should be fine
+  if (widget_element.offsetWidth < 220) {
+    logo_element = widget_element.getElementsByClassName('logo')[0].getElementsByTagName('img')[0];
+    thumbnail_element = widget_element.getElementsByClassName('thumbnail')[0].getElementsByTagName('img')[0];
+    // Get scale factor to rescale images by
+    scaleFactor = (widget_element.offsetWidth - 20) / (logo_element.offsetWidth + thumbnail_element.offsetWidth); // subtract 20px to account for padding
+    // Rescale images
+    logo_element.setAttribute('width', scaleFactor * logo_element.getAttribute('width') - 1);
+    logo_element.setAttribute('height', scaleFactor * logo_element.getAttribute('height') - 1);
+    thumbnail_element.setAttribute('width', scaleFactor * thumbnail_element.getAttribute('width') - 1);
+    thumbnail_element.setAttribute('height', scaleFactor * thumbnail_element.getAttribute('height') - 1);
+  }
+}
+resizeShopSquadImages();
+</script>
 
 $after_widget
 END;

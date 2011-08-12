@@ -13,7 +13,7 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 = This plugin displays: =
 
 
-* Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username and picture linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile
+* Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") avatar linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile
 
 * A link to get advice from you
 
@@ -40,6 +40,9 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+
+= 2.1 =
+* Fixed styling issues when plugin width is 220px or less. (Images auto-resize.)
 
 = 2.0 =
 * Complete plugin redesign. Now shows thumbnail, link to profile page, and invitation to join.
