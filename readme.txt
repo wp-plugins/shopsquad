@@ -29,7 +29,7 @@ Let your readers know that you're available to give shopping advice on ShopSquad
 
 * Search for 'shopsquad' and click 'Install' and then 'Activate Plugin'
 
-* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username and areas of advice.
+* In the 'Appearance' tab, click on 'Widgets', place the plugin in a desired location, and enter in your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") username.
 
 == Frequently Asked Questions ==
 
