@@ -2,7 +2,7 @@
 /*
 Plugin Name: ShopSquad Advisor Plugin
 Plugin URI: http://www.shopsquad.com/
-Version: v2.2
+Version: v2.3
 Author: ShopSquad
 Description: A plugin for <a href="http://www.shopsquad.com" target="_blank">ShopSquad</a> advisors
 */
@@ -33,7 +33,7 @@ class ShopSquad_Widget extends WP_Widget {
 
 		$username = trim( urlencode( $instance['username'] ) );
 		# Set default ShopSquad background color if it's blank
-		$background_color = trim( urlencode( $instance['background_color'] ) );
+		$background_color = trim( $instance['background_color'] );
 		if ( empty($background_color) ) {
 		  $background_color = "#1167BC";
 		}
@@ -72,7 +72,7 @@ class ShopSquad_Widget extends WP_Widget {
 		$instance = $old_instance;
 
 		$instance['username'] = trim( strip_tags( stripslashes( $new_instance['username'] ) ) );
-		$instance['background_color'] = trim( strip_tags( stripslashes( $new_instance['background_color'] ) ) );
+		$instance['background_color'] = trim( $new_instance['background_color'] );
 
 		wp_cache_delete( 'widget-shopsquad-' . $this->number , 'widget' );
 		wp_cache_delete( 'widget-shopsquad-response-code-' . $this->number, 'widget' );
@@ -85,7 +85,7 @@ class ShopSquad_Widget extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, array('username' => '', 'background_color' => '#1167BC')); 
 
 		$username = esc_attr($instance['username']);
-		$background_color = esc_attr($instance['background_color']);
+		$background_color = $instance['background_color'];
     # Don't show background color in form if it's the default
     if ($background_color == '#1167BC') {
       $background_color = "";
@@ -96,7 +96,7 @@ class ShopSquad_Widget extends WP_Widget {
 		echo '  </label>';
 		echo '</p>';
 		echo '<p>';
-		echo '  <label for="' . $this->get_field_id('background_color') . '">' . esc_html__('Enter background color (e.g. blue, red, black). Leave blank for default or enter transparent to make the background transparent:');
+		echo '  <label for="' . $this->get_field_id('background_color') . '">' . esc_html__('Enter background color (e.g. blue, red, black, #FA4239). Leave blank for default or enter transparent to make the background transparent:');
 		echo '    <input class="widefat" id="' . $this->get_field_id('background_color') . '" name="' . $this->get_field_name('background_color') . '" type="text" value="' . $background_color . '" />';
 		echo '  </label>';
 		echo '</p>';

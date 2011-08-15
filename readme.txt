@@ -40,6 +40,9 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+= 2.3 =
+* Fixed bug not allowing you to manually enter colors using pound symbol (like #FFFFFF).
+
 = 2.2 =
 * Added option to change background color. Default is ShopSquad blue (will make footer text white to look better).
 
