@@ -174,7 +174,7 @@ $before_widget
   <div class="header">
     <div class="logo">
       <a href='http://www.shopsquad.com?vsrc=$username' target='_blank'>
-        <img src='http://localhost:3000/assets/blog_widgets/shopsquad_logo.png'  width="124" height="50" />
+        <img src='http://www.shopsquad.com/assets/blog_widgets/shopsquad_logo.png'  width="124" height="50" />
       </a>
     </div>
     <div class="thumbnail">
