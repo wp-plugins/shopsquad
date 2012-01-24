@@ -1,23 +1,19 @@
 === ShopSquad ===
 Contributors: oamasood
 Donate link: http://www.shopsquad.com/
-Tags: shopsquad, shopping, advice, experts, products
+Tags: shopsquad, shopping, discounts, products, items
 Requires at least: 2.0.2
 Tested up to: 3.2.1
 Stable tag: trunk
 
-Let your readers know that you're available to give shopping advice on ShopSquad (www.shopsquad.com).
+Let your readers know that you've curated a collection on ShopSquad, and that you're available to chat about your favorite stuff.
 
 == Description ==
 
 = This plugin displays: =
 
 
-* Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") avatar linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") profile
-
-* A link to get advice from you
-
-* A link to join ShopSquad with you as the referrer. (You get $5 for every person who joins and recommends $50.)
+* Your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") avatar linking to your [ShopSquad](http://www.shopsquad.com/ "ShopSquad") collection
 
 == Installation ==
 
@@ -40,6 +36,9 @@ None so far.
 1. A screenshot of the plugin
 
 == Changelog ==
+= 2.4 =
+* Updating for the new ShopSquad.
+
 = 2.3 =
 * Fixed bug not allowing you to manually enter colors using pound symbol (like #FFFFFF).
 

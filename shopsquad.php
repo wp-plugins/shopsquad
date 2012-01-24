@@ -17,7 +17,7 @@ if ( version_compare( $wp_version, '2.9', '<' ) && !class_exists( 'Services_JSON
 class ShopSquad_Widget extends WP_Widget {
 
 	public function ShopSquad_Widget() {
-		$widget_ops = array('classname' => 'shopsquad_widget', 'description' => __( 'Display your ShopSquad stats' ) );
+		$widget_ops = array('classname' => 'shopsquad_widget', 'description' => __( 'A ShopSquad widget' ) );
 
     $control_ops = array(
 			'width' => 220,
@@ -173,12 +173,12 @@ $before_widget
 <div id="shopsquad_widget" style="background-color:$background_color;">
   <div class="header">
     <div class="logo">
-      <a href='http://www.shopsquad.com/' target='_blank'>
-        <img src='http://www.shopsquad.com/images/logo_small.png'  width="124" height="25" />
+      <a href='http://www.shopsquad.com?vsrc=$username' target='_blank'>
+        <img src='http://localhost:3000/assets/blog_widgets/shopsquad_logo.png'  width="124" height="50" />
       </a>
     </div>
     <div class="thumbnail">
-      <a href='http://www.shopsquad.com/$username' target='_blank'>
+      <a href='http://www.shopsquad.com/$username?vsrc=$username' target='_blank'>
         <img src='$thumbnail_url' width="67" height="67" />
       </a>
     </div>
@@ -186,16 +186,16 @@ $before_widget
   <div class="body clearfix">
     <div>
       <p class="top_advisor">
-        I'm a top Advisor! Ask me your shopping questions:
+        I'm a top Advisor on ShopSquad, where you get exclusive discounts based on what you own:
       </p>
       <p class="get_advice">
-        <a href='http://www.shopsquad.com/$username' target='_blank'>Get Advice</a>
+        <a href='http://www.shopsquad.com/$username?vsrc=$username' target='_blank'>See What I Own</a>
       </p>
     </div>
   </div>
   <div class="footer">
     <p class="shopping_expert">Are you a shopping expert?</p>
-    <p><a href='http://www.shopsquad.com/invited_by/$username' target='_blank'>Join the Squad</a></p>
+    <p><a href='http://www.shopsquad.com?vsrc=$username' target='_blank'>Join the Squad!</a></p>
   </div>
 </div>
 <script type="text/javascript">
